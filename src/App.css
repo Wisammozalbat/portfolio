@@ -1,10 +1,9 @@
 :root {
-	--color-primary: #3f44de;
-	--color-primary-light: #0071fa;
-	--color-primary-dark: #0000a8;
-
-	--text-dark: #000314;
-	--text-light: #e6ffff;
+	--color-primary: rgb(44, 49, 214);
+	--color-primary-light: rgb(0, 113, 250);
+	--color-primary-dark: rgb(0, 0, 111);
+	--text-dark: rgb(0, 3, 20);
+	--text-light: rgb(230, 255, 255);
 }
 
 *,
@@ -18,6 +17,7 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -25,78 +25,38 @@ body {
 	font-weight: 300;
 }
 
-.header {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.container {
+	display: grid;
+	grid-template-columns:
+		[sidebar-start] 20rem [sidebar-end full-start] minmax(6rem, 1fr)
+		[center-start] repeat(
+			8,
+			[col-start] minmax(min-content, 14rem) [col-end]
+		)
+		[center-end] minmax(6rem, 1fr) [full-end];
+	grid-row: repeat(4, minmax(1fr, min-content));
+}
+
+.about,
+.skills,
+.projects,
+.contact {
+	grid-column: full-start 1 / full-end;
 	height: 100vh;
-	padding: 1.5rem;
-	position: fixed;
-	font-size: 2rem;
-	left: 0;
-	top: 0;
-	background-color: var(--color-primary-dark);
 }
 
-.navbar {
-	color: var(--text-light);
-	text-transform: capitalize;
-	letter-spacing: 2px;
+.about {
+	background-color: khaki;
 }
 
-.navbar__item {
-	color: inherit;
-	cursor: pointer;
-	padding: 1rem 2rem;
-	position: relative;
-	transition: all 0.5s;
-	text-align: center;
-	z-index: 1;
+.skills {
+	background-color: lawngreen;
 }
 
-.navbar__item:hover {
-	color: var(--color-primary);
+.projects {
+	background-color: lightcoral;
 }
 
-.navbar__item:not(:last-child) {
-	margin-bottom: 1rem;
-}
-
-.navbar__item::before,
-.navbar__item::after {
-	z-index: -1;
-	content: "";
-	position: absolute;
-	left: 0;
-	width: 100%;
-	transition: transform 0.5s ease-out;
-	transform: scaleX(0);
-}
-
-.navbar__item::before {
-	top: 0;
-	height: 95%;
-	transform-origin: right;
-	background-color: var(--text-light);
-}
-
-.navbar__item::after {
-	bottom: 0;
-	height: 5%;
-	transform-origin: left;
-	background-color: var(--color-primary-light);
-}
-
-.navbar__item:hover::before {
-	transition: transform 0.5s ease-in;
-	transform-origin: left;
-
-	transform: scaleX(1);
-}
-
-.navbar__item:hover::after {
-	transition: transform 0.5s ease-in;
-	transform-origin: right;
-
-	transform: scaleX(1);
+.contact {
+	background-color: lightslategray;
 }
