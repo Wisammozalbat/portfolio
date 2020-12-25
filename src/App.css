@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700;1,900&display=swap");
+
 :root {
 	--color-primary: rgb(44, 49, 214);
 	--color-primary-light: rgb(0, 113, 250);
+	--color-primary-light-2: rgb(79, 158, 255);
 	--color-primary-dark: rgb(0, 0, 111);
 	--text-dark: rgb(0, 3, 20);
 	--text-light: rgb(230, 255, 255);
@@ -46,11 +49,13 @@ body {
 }
 
 .about {
-	background-color: khaki;
+	/* background-color: khaki; */
 }
 
 .skills {
-	background-color: lawngreen;
+	/* background-color: lawngreen; */
+	margin-top: -10vh;
+	padding-top: 12vh;
 }
 
 .projects {

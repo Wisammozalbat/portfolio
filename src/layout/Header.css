@@ -111,6 +111,29 @@
 	transform: scaleX(1);
 }
 
+.social-media {
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
+	margin-bottom: 10px;
+}
+
+.social-media a:link,
+.social-media a:visited {
+	color: inherit;
+}
+
+.social-media__icon {
+	width: 3rem;
+	height: 3rem;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.social-media__icon:hover {
+	transform: translateY(-5px) scale(1.1);
+}
+
 @keyframes bgMove {
 	0% {
 		background-position: right;

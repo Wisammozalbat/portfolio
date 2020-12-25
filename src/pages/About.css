@@ -1,0 +1,81 @@
+.about__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+	background-image: linear-gradient(
+			rgba(239, 239, 255, 0.911),
+			rgba(239, 239, 255, 0.904)
+		),
+		url("../img/about-bg-3.jpg");
+
+	background-size: cover;
+	background-position: left;
+	backface-visibility: hidden;
+	padding: 10rem 10rem 20rem 10rem;
+}
+
+.about__name {
+	font-size: 3.5rem;
+	font-style: italic;
+	font-weight: bold;
+	display: inline-block;
+	background-color: var(--color-primary-dark);
+	color: white;
+	padding: 1rem 4rem;
+	box-shadow: -5px 5px 0px var(--color-primary);
+	letter-spacing: 2px;
+
+	/* align-self: start;
+	font-size: 5.5rem;
+	font-style: italic;
+	font-weight: bold;
+	display: inline-block; */
+	/* color: var(--color-primary-dark);
+	padding: 1rem 4rem;
+	text-shadow: -2px 2px 0px var(--color-primary); */
+}
+
+.about__text {
+	font-size: 3.5rem;
+	width: 80%;
+	display: inline;
+	line-height: 2;
+	text-align: justify;
+	font-family: "Nunito", sans-serif;
+}
+
+.about__text span {
+	font-family: inherit;
+	font-weight: 900;
+	padding: 0.5rem 0;
+
+	color: rgba(59, 59, 255, 0.8);
+	background-position: center center;
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+	.about__text span {
+		background-image: linear-gradient(
+				rgba(59, 59, 255, 0.8),
+				rgba(59, 59, 255, 0.8)
+			),
+			url(../img/bg-dots.png);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+}
+
+@keyframes bgMove {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}

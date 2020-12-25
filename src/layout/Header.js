@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './Header.css'
+import './Header.css';
+
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
+import { SiUpwork } from "react-icons/si"
 
 const defaultClasses = {
     about: ['nav__item'],
@@ -53,6 +56,18 @@ const Header = props => {
                     <li className={[classes.projects.join(" ")]} onClick={() => toggleActive("projects")}><a href="#projects" className="nav__link">Projects</a></li>
                     <li className={[classes.contact.join(" ")]} onClick={() => toggleActive("contact")}><a href="#contact" className="nav__link">Contact Me</a></li>
                 </ul>
+
+                <div className="social-media">
+                    <a href="/#">
+                        <AiFillGithub className="social-media__icon" />
+                    </a>
+                    <a href="/#">
+                        <AiFillLinkedin className="social-media__icon"/>
+                    </a>
+                    <a href="/#">
+                        <SiUpwork className="social-media__icon"/>
+                    </a>
+                </div>
 
                 <div className="copyright">&copy; Copyright 2020 by Wisam Mozalbat</div>
             </div>
