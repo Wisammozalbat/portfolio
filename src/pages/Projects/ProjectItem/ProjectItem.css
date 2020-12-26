@@ -1,0 +1,72 @@
+.project-item__container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 35rem;
+  height: 25rem;
+  perspective: 1500px;
+  display: inline-block;
+  opacity: 1;
+  user-select: none;
+}
+
+.project-item__card {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.project-item__card:hover {
+  transform: rotateY(180deg);
+}
+
+.project-item__card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-item__card-face--front {
+  /* background-color: var(--card-bg-border); */
+  background-color: white;
+  width: 100%;
+}
+
+.project-item__card-face--back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+.project-item__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-item__name {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40%;
+  width: 100%;
+  background-color: rgba(0, 0, 190, 0.658);
+  color: var(--text-light);
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+  padding-top: 45px;
+  padding-right: 30px;
+  text-align: end;
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: "Nunito";
+  letter-spacing: 2px;
+}

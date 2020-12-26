@@ -68,8 +68,6 @@ const Header = props => {
                         <SiUpwork className="social-media__icon"/>
                     </a>
                 </div>
-
-                <div className="copyright">&copy; Copyright 2020 by Wisam Mozalbat</div>
             </div>
         </div>
     )
