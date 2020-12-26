@@ -7,7 +7,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.719)),
     url(../../../img/projects-bg.png);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   padding: 16vh 0 5vh 0;
   -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 85vh, 0 100%);
   clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);

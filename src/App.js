@@ -1,3 +1,4 @@
+import './Global.css';
 import './App.css';
 import Header from './layout/Header';
 
@@ -16,10 +17,10 @@ function App() {
     threshold: 0.5,
   });
   const [ projectsRef, projectsInView ] = useInView({
-    threshold: 0.3,
+    threshold: 0.6,
   });
   const [ contactRef, contactInView ] = useInView({
-    threshold: 0.3,
+    threshold: 0.5,
   });
 
   const [activeLink, setActiveLink] = useState("about");
@@ -43,7 +44,9 @@ function App() {
         <About isVisible={activeLink === 'about'}/>
       </section>
       <section className="skills" ref={skillsRef} id="skills">Skills</section>
-      <section className="projects" ref={projectsRef} id="projects"><ProjectItems /></section>
+      <section className="projects" ref={projectsRef} id="projects">
+        <ProjectItems />
+      </section>
       <section className="contact" ref={contactRef} id="contact">Contact Me</section>
       <section className="footer" id="footer">&copy; Copyright 2020 by Wisam Mozalbat</section>
     </div>

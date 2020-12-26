@@ -1,0 +1,32 @@
+.heading-1 {
+  font-size: 3.5rem;
+  font-style: italic;
+  font-weight: bold;
+  display: inline-block;
+  padding: 1rem 4rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.heading-1--light {
+  color: var(--text-light);
+}
+
+.heading-1-bg--square {
+  position: relative;
+}
+
+.heading-1-bg--square::before {
+  content: "";
+  position: absolute;
+  top: 0rem;
+  left: 2.5rem;
+  height: 4rem;
+  width: 4rem;
+  background-image: linear-gradient(rgba(0, 0, 111, 0.8), rgba(0, 0, 111, 0.8)),
+    url(img/bg-dots.png);
+  background-size: cover;
+  background-position: center center;
+  box-shadow: -5px -5px 0px var(--text-light);
+  z-index: -1;
+}

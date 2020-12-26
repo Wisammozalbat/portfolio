@@ -44,6 +44,81 @@
 .project-item__card-face--back {
   background-color: white;
   transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  color: var(--text-dark);
+}
+
+.project-item__description {
+  font-size: 2rem;
+}
+
+.project-item__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: auto;
+  padding: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+.project-item__technologies::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: lightgrey;
+}
+
+.project-item__technologies::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: lightgrey;
+}
+
+.project-item__technology {
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.project-item__links {
+  display: flex;
+  width: 100%;
+  padding: 1rem 2rem 0 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.project-item__link:link,
+.project-item__link:visited {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5rem;
+  z-index: 3;
+}
+
+.project-item__link-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1rem;
 }
 
 .project-item__image {
@@ -69,4 +144,12 @@
   font-weight: 600;
   font-family: "Nunito";
   letter-spacing: 2px;
+  opacity: 1;
+  transition: opacity 0.5s 0.5s, visibility 0s;
+}
+
+.project-item__card:hover .project-item__name {
+  transition: opacity 1s, visibility 0s 1s;
+  opacity: 0;
+  visibility: hidden;
 }
