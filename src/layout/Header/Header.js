@@ -23,40 +23,40 @@ const Header = props => {
     });
 
     useEffect(() => {
-        let newStyleClasses = {...defaultClasses}
-        for (let item in newStyleClasses) {
-            if (item === props.activeLink) {
-                newStyleClasses[item] = ['nav__item', 'active']
-            } else {
-                newStyleClasses[item] = ['nav__item']
-            }
-        }
-        setClasses({...newStyleClasses})
+        toggleActive(props.activeLink);
     }, [props.activeLink])
 
     const toggleActive = (activeItem) => {
-        let newStyleClasses = {...classes}
+        let newStyleClasses = {...defaultClasses}
             for (let item in newStyleClasses) {
                 if (item === activeItem) {
-                    newStyleClasses[item] = ['nav__item', 'active']
+                    newStyleClasses[item] = [...defaultClasses[item], 'active'];
                 } else {
-                    newStyleClasses[item] = ['nav__item']
+                    newStyleClasses[item] = [...defaultClasses[item]]
                 }
             }
-            setClasses({...newStyleClasses})
+        setClasses({...newStyleClasses});
     }
+
+    const [burgerActive, setBurgerActive] = useState(false)
 
     return (
         <div className="header__container">
             <div className="header__content">
-                <AppLogo className="header__logo"/>
+                <a href="/"><AppLogo className="header__logo"/></a>
 
-                <ul className="nav">
-                    <li className={[classes.about.join(" ")]} onClick={() => toggleActive("about")}>
+                <div className={['burger', burgerActive ? 'active' : ''].join(" ")} onClick={() => setBurgerActive(curr => !curr)}>
+                    <div className="burg1"></div>
+                    <div className="burg2"></div>
+                    <div className="burg3"></div>
+                </div>
+
+                <ul className={['nav', burgerActive ? 'active' : ''].join(" ")}>
+                    <li className={[classes.about.join(" ")]} onClick={() => {toggleActive("about"); setBurgerActive(false)}}>
                         <a href="#about" className="nav__link">About Me</a></li>
-                    <li className={[classes.technologies.join(" ")]} onClick={() => toggleActive("technologies")}><a href="#technologies" className="nav__link">Technologies</a></li>
-                    <li className={[classes.projects.join(" ")]} onClick={() => toggleActive("projects")}><a href="#projects" className="nav__link">Projects</a></li>
-                    <li className={[classes.contact.join(" ")]} onClick={() => toggleActive("contact")}><a href="#contact" className="nav__link">Contact Me</a></li>
+                    <li className={[classes.technologies.join(" ")]} onClick={() => {toggleActive("technologies"); setBurgerActive(false)}}><a href="#technologies" className="nav__link">Technologies</a></li>
+                    <li className={[classes.projects.join(" ")]} onClick={() =>{toggleActive("projects"); setBurgerActive(false)}}><a href="#projects" className="nav__link">Projects</a></li>
+                    <li className={[classes.contact.join(" ")]} onClick={() => {toggleActive("contact"); setBurgerActive(false)}}><a href="#contact" className="nav__link">Contact Me</a></li>
                 </ul>
 
                 <div className="social-media">

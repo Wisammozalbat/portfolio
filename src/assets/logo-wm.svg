@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.35 47.63">
     <defs>
         <style>
-            .cls-1{fill:none;stroke:inherit;stroke-linecap:round;stroke-linejoin:bevel;}
+            .cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:bevel;}
         </style>
     </defs>
     <title>Asset 2</title>
