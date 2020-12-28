@@ -22,12 +22,19 @@ const ProjectItem = props => {
                             {props.links.github !== '' ? 
                                 <div className="project-item__link-content">
                                     <AiFillGithub className="link-icon"/>
-                                    <a href={props.links.github} target="_blank" rel="noreferrer" className="project-item__link">
+                                    <a href={props.links.github} target="_blank" rel="noreferrer" className="project-item__link link">
                                         Source code
                                     </a> 
                                 </div>
                             : null }
-                            {props.links.demo !== '' ? <div className="project-item__link"><BiSlideshow className="link-icon" /></div> : null }
+                            {props.links.demo !== '' ? 
+                                <div className="project-item__link-content">
+                                    <BiSlideshow className="link-icon" />
+                                    <a href={props.links.demo} target="_blank" rel="noreferrer" className="project-item__link link">
+                                        Demo
+                                    </a> 
+                                </div> 
+                            : null }
                         </div>
                         : null
                     }

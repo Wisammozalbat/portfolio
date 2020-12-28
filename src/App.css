@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;0,700;0,900;1,200;1,300;1,500;1,700;1,900");
 
 :root {
   --color-primary: rgb(44, 49, 214);
@@ -7,6 +8,9 @@
   --color-primary-dark: rgb(0, 0, 111);
   --text-dark: rgb(0, 3, 20);
   --text-light: rgb(230, 255, 255);
+  --font-text: "Montserrat", sans-serif;
+  --font-title: "Montserrat", sans-serif;
+  --font-navbar: "Nunito", sans-serif;
 }
 
 *,
@@ -24,7 +28,7 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: var(--font-text);
   font-weight: 300;
 }
 
@@ -37,27 +41,25 @@ body {
   grid-template-rows: repeat(5, minmax(1fr, max-content));
 }
 
-.about,
-.skills,
-.contact {
+.about {
   grid-column: full-start 1 / full-end;
-  height: 100vh;
 }
 
-.skills {
-  background-color: lawngreen;
+.technologies {
+  /* background-color: lawngreen; */
   grid-column: col-start 1 / col-end 8;
-  margin-top: -15vh;
+  margin-top: -10vh;
   padding: 15vh 0;
 }
 
 .projects {
   grid-column: full-start 1 / full-end;
-  margin-top: -15vh;
+  margin-top: -10vh;
 }
 
 .contact {
-  background-color: lightslategray;
+  grid-column: full-start 1 / full-end;
+  padding: 5rem;
 }
 
 .footer {
