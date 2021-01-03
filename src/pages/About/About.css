@@ -1,0 +1,106 @@
+.about__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  background-image: linear-gradient(
+      rgba(239, 239, 255, 0.911),
+      rgba(239, 239, 255, 0.904)
+    ),
+    url(../../assets/about-bg-3.jpg);
+
+  background-size: cover;
+  background-position: left;
+  backface-visibility: hidden;
+  padding: 10rem 10rem 15rem 10rem;
+}
+
+.about__name {
+  position: relative;
+}
+
+.about__name::before {
+  content: "My name is";
+  color: rgb(122, 122, 122);
+  position: absolute;
+  top: -5rem;
+  left: 0;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.about__text {
+  font-size: 3.5rem;
+  width: 80%;
+  display: inline;
+  line-height: 2;
+  text-align: justify;
+  font-family: inherit;
+  margin: 4rem 0;
+}
+
+.about__text span {
+  font-family: inherit;
+  font-weight: 900;
+  padding: 0.5rem 0;
+  color: rgba(59, 59, 255, 0.8);
+  background-position: center center;
+}
+
+.about__resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__resume-link:link,
+.about__resume-link:visited {
+  font-size: 2rem;
+}
+
+.resume-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .about__container {
+    padding: 8rem 5rem 15rem 5rem;
+  }
+
+  .about__text {
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  .about__container {
+    margin-top: 9.6rem;
+  }
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .about__text span {
+    background-image: linear-gradient(
+        rgba(59, 59, 255, 0.8),
+        rgba(59, 59, 255, 0.8)
+      ),
+      url(../../assets/bg-dots.png);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.35 47.63">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:bevel;}
+        </style>
+    </defs>
+    <title>Asset 2</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <line class="cls-1" x1="0.5" y1="0.57" x2="0.5" y2="47.13"/>
+            <line class="cls-1" x1="0.57" y1="46.98" x2="23.2" y2="0.57"/>
+            <line class="cls-1" x1="31.93" y1="18.48" x2="23.2" y2="0.57"/>
+            <line class="cls-1" x1="45.85" y1="47.06" x2="45.85" y2="0.5"/>
+            <line class="cls-1" x1="45.79" y1="0.64" x2="23.15" y2="47.06"/>
+            <line class="cls-1" x1="14.4" y1="29.15" x2="23.13" y2="47.06"/>
+        </g>
+    </g>
+</svg>

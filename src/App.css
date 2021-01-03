@@ -1,102 +1,83 @@
-:root {
-	--color-primary: #3f44de;
-	--color-primary-light: #0071fa;
-	--color-primary-dark: #0000a8;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,300;0,600;0,700;0,900;1,300;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,500;0,700;0,900;1,200;1,300;1,500;1,700;1,900");
 
-	--text-dark: #000314;
-	--text-light: #e6ffff;
+:root {
+  --color-primary: rgb(44, 49, 214);
+  --color-primary-light: rgb(0, 113, 250);
+  --color-primary-light-2: rgb(79, 158, 255);
+  --color-primary-dark: rgb(0, 0, 111);
+  --text-dark: rgb(0, 3, 20);
+  --text-light: rgb(230, 255, 255);
+  --font-text: "Montserrat", sans-serif;
+  --font-title: "Montserrat", sans-serif;
+  --font-navbar: "Nunito", sans-serif;
 }
 
 *,
 *::after,
 *::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-	box-sizing: border-box;
-	font-size: 62.5%;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
-	font-family: sans-serif;
-	font-weight: 300;
+  font-family: var(--font-text);
+  font-weight: 300;
 }
 
-.header {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 100vh;
-	padding: 1.5rem;
-	position: fixed;
-	font-size: 2rem;
-	left: 0;
-	top: 0;
-	background-color: var(--color-primary-dark);
+.container {
+  display: grid;
+  grid-template-columns:
+    [sidebar-start] 20rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-rows: repeat(5, minmax(1fr, max-content));
 }
 
-.navbar {
-	color: var(--text-light);
-	text-transform: capitalize;
-	letter-spacing: 2px;
+.about {
+  grid-column: full-start 1 / full-end;
 }
 
-.navbar__item {
-	color: inherit;
-	cursor: pointer;
-	padding: 1rem 2rem;
-	position: relative;
-	transition: all 0.5s;
-	text-align: center;
-	z-index: 1;
+.technologies {
+  /* background-color: lawngreen; */
+  grid-column: col-start 1 / col-end 8;
+  margin-top: -10vh;
+  padding: 15vh 0;
 }
 
-.navbar__item:hover {
-	color: var(--color-primary);
+.projects {
+  grid-column: full-start 1 / full-end;
+  margin-top: -10vh;
 }
 
-.navbar__item:not(:last-child) {
-	margin-bottom: 1rem;
+.contact {
+  grid-column: full-start 1 / full-end;
+  padding: 5rem;
 }
 
-.navbar__item::before,
-.navbar__item::after {
-	z-index: -1;
-	content: "";
-	position: absolute;
-	left: 0;
-	width: 100%;
-	transition: transform 0.5s ease-out;
-	transform: scaleX(0);
+.footer {
+  grid-column: full-start 1 / full-end;
 }
 
-.navbar__item::before {
-	top: 0;
-	height: 95%;
-	transform-origin: right;
-	background-color: var(--text-light);
+@media (max-width: 900px) {
+  html {
+    font-size: 55%;
+  }
 }
 
-.navbar__item::after {
-	bottom: 0;
-	height: 5%;
-	transform-origin: left;
-	background-color: var(--color-primary-light);
-}
-
-.navbar__item:hover::before {
-	transition: transform 0.5s ease-in;
-	transform-origin: left;
-
-	transform: scaleX(1);
-}
-
-.navbar__item:hover::after {
-	transition: transform 0.5s ease-in;
-	transform-origin: right;
-
-	transform: scaleX(1);
+@media (max-width: 700px) {
+  .container {
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end] minmax(6rem, 1fr) [full-end];
+    grid-template-rows: repeat(6, max-content);
+  }
 }

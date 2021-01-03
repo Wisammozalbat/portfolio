@@ -1,0 +1,29 @@
+.projects__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.719)),
+    url(../../../assets/projects-bg.png);
+  background-size: cover;
+  background-position: center center;
+  padding: 16vh 0 8vh 0;
+  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 85vh, 0 100%);
+  clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+}
+
+.projects__content {
+  align-self: stretch;
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-gap: 4rem;
+  justify-items: center;
+}
+
+.more-soon {
+  color: var(--text-light);
+  font-size: 1.5rem;
+  filter: brightness(0.7);
+}

@@ -1,0 +1,39 @@
+.technologies__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+}
+
+.technologies__subtitle {
+  font-size: 2.5rem;
+  font-family: var(--font-text);
+  font-weight: 500;
+}
+
+.technologies__subtitle:first-of-type {
+  margin-top: 3rem;
+}
+
+.technology__list {
+  display: grid;
+  margin: 3rem 0;
+  grid-template-columns: repeat(2, max-content);
+  grid-row-gap: 1rem;
+  grid-column-gap: 7rem;
+  justify-items: start;
+}
+
+.technology__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.technology__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1.5rem;
+}

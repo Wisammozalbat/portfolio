@@ -1,0 +1,17 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 2rem 4rem;
+  background-image: linear-gradient(
+      rgba(145, 145, 145, 0.253),
+      rgba(145, 145, 145, 0.253)
+    ),
+    url(../../assets/footer-bg.jpg);
+  background-size: 25%;
+  background-position: center;
+  color: white;
+  font-size: 1.2rem;
+}
